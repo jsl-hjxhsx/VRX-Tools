@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRX Tools | Premium Digital Assets</title>
+    <style>
+        :root {
+            --gold: #FFD700;
+            --red: #FF3131;
+            --black: #000000;
+            --card-gray: #0A0A0A;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--black); /* Volledig zwart */
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Header Sectie */
+        header {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .logo-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%; /* Maakt het logo rond */
+            border: 3px solid var(--gold);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            background-color: var(--black);
+        }
+
+        /* Ademend effect achter logo */
+        .logo-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 50%;
+            box-shadow: 0 0 30px var(--gold);
+            opacity: 0.2;
+            animation: pulse 3s infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.2; }
+            50% { transform: scale(1.2); opacity: 0.4; }
+            100% { transform: scale(1); opacity: 0.2; }
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--gold);
+            margin: 10px 0;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+
+        /* Shop Grid */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto 100px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--card-gray);
+            border: 1px solid #1a1a1a;
+            border-radius: 15px;
+            padding: 35px;
+            text-align: left;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            border-color: var(--red);
+            transform: translateY(-10px);
+            background: #111;
+        }
+
+        .card h2 { color: var(--gold); margin-top: 0; }
+        .card p { color: #888; font-size: 0.95rem; min-height: 60px; }
+        .price { font-size: 1.5rem; font-weight: bold; margin: 20px 0; display: block; }
+
+        .btn {
+            display: block;
+            background: var(--red);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            color: var(--red);
+            box-shadow: 0 0 20px rgba(255, 49, 49, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding-bottom: 50px;
+            opacity: 0.5;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-wrapper">
+        <img src="logo.png" alt="VRX" class="logo">
+    </div>
+    <h1>VRX TOOLS</h1>
+    <p style="color: #666; letter-spacing: 2px;">SECURE • FAST • ELITE</p>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>OSINT</h2>
+        <p>Advanced intelligence gathering module. Search social, web, and data leaks.</p>
+        <span class="price">€6.50</span>
+        <a href="HIER_JE_DISCORD_LINK" class="btn">ORDER ON DISCORD</a>
+    </div>
+
+    <div class="card">
+        <h2>TOKEN</h2>
+        <p>Premium Discord Token Grabber. Fast logs, stealth mode, and easy setup.</p>
+        <span class="price">€7.00</span>
+        <a href="HIER_JE_DISCORD_LINK" class="btn">ORDER ON DISCORD</a>
+    </div>
+
+    <div class="card">
+        <h2>PHISHING</h2>
+        <p>Custom 1:1 login clones. High success rate with mobile-ready pages.</p>
+        <span class="price">€5.50</span>
+        <a href="HIER_JE_DISCORD_LINK" class="btn">ORDER ON DISCORD</a>
+    </div>
+
+    <div class="card">
+        <h2>GRABBER</h2>
+        <p>Silent data capture. Logs IP, Hardware ID, and Connection details.</p>
+        <span class="price">€4.00</span>
+        <a href="HIER_JE_DISCORD_LINK" class="btn">ORDER ON DISCORD</a>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 VRX TOOLS - DISCORD EXCLUSIVE
+</footer>
+
+</body>
+</html>
