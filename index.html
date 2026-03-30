@@ -3,170 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VRX Tools | Premium Digital Assets</title>
+    <title>VRX Tools | Premium Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
+        /* ========================================
+           CSS DESIGN SYSTEM
+           ======================================== */
         :root {
             --gold: #FFD700;
             --red: #FF3131;
             --black: #000000;
-            --card-gray: #0A0A0A;
+            --dark-gray: #050505;
+            --card-bg: #0C0C0C;
+            --text-dim: #888;
+            --transition: all 0.3s ease;
         }
 
+        * { box-sizing: border-box; scroll-behavior: smooth; }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--black); /* Volledig zwart */
-            color: #ffffff;
+            background-color: var(--black);
+            color: #fff;
             margin: 0;
-            padding: 0;
             overflow-x: hidden;
         }
 
-        /* Header Sectie */
-        header {
-            padding: 80px 20px;
-            text-align: center;
+        /* NAVIGATION */
+        nav {
+            background: rgba(0,0,0,0.95);
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0; width: 100%; z-index: 9999;
+            border-bottom: 1px solid #111;
         }
-
-        .logo-wrapper {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 20px;
+        nav a {
+            color: #fff; text-decoration: none; margin: 0 15px;
+            font-size: 0.8rem; font-weight: bold; text-transform: uppercase;
+            letter-spacing: 2px; transition: var(--transition);
         }
+        nav a:hover { color: var(--gold); }
 
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center; background: radial-gradient(circle, #111 0%, #000 100%);
+        }
+        .logo-wrapper { position: relative; margin-bottom: 20px; }
         .logo {
-            width: 150px;
-            height: 150px;
+            width: 160px; height: 160px; border-radius: 50%;
+            border: 3px solid var(--gold); box-shadow: 0 0 30px var(--gold);
             object-fit: cover;
-            border-radius: 50%; /* Maakt het logo rond */
-            border: 3px solid var(--gold);
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
-            background-color: var(--black);
         }
-
-        /* Ademend effect achter logo */
-        .logo-wrapper::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            border-radius: 50%;
-            box-shadow: 0 0 30px var(--gold);
-            opacity: 0.2;
-            animation: pulse 3s infinite;
-            z-index: -1;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.2; }
-            50% { transform: scale(1.2); opacity: 0.4; }
-            100% { transform: scale(1); opacity: 0.2; }
-        }
-
         h1 {
-            font-size: 3rem;
-            color: var(--gold);
-            margin: 10px 0;
-            letter-spacing: 8px;
-            text-transform: uppercase;
+            font-size: 4rem; letter-spacing: 12px; margin: 10px 0;
+            background: linear-gradient(to right, #fff, var(--gold));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        /* Shop Grid */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto 100px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            padding: 0 20px;
-        }
+        /* INFO SECTIONS */
+        .section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
+        h2 { color: var(--gold); font-size: 2.5rem; text-transform: uppercase; letter-spacing: 4px; }
+        p.desc { color: var(--text-dim); line-height: 1.8; max-width: 800px; margin: 0 auto 50px; }
 
+        /* SHOP GRID */
+        .grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px; margin-top: 50px;
+        }
         .card {
-            background: var(--card-gray);
-            border: 1px solid #1a1a1a;
-            border-radius: 15px;
-            padding: 35px;
-            text-align: left;
-            transition: 0.4s;
+            background: var(--card-bg); border: 1px solid #1a1a1a;
+            padding: 40px 25px; border-radius: 15px; transition: var(--transition);
+            position: relative;
         }
-
-        .card:hover {
-            border-color: var(--red);
-            transform: translateY(-10px);
-            background: #111;
+        .card:hover { transform: translateY(-10px); border-color: var(--red); background: #0f0f0f; }
+        .card h3 { color: var(--gold); margin-bottom: 10px; }
+        .price { font-size: 1.8rem; font-weight: 900; display: block; margin: 15px 0; }
+        .buy-btn {
+            background: var(--red); color: #fff; text-decoration: none;
+            padding: 12px; display: block; border-radius: 5px; font-weight: bold;
+            transition: var(--transition);
         }
+        .buy-btn:hover { background: #fff; color: var(--red); }
 
-        .card h2 { color: var(--gold); margin-top: 0; }
-        .card p { color: #888; font-size: 0.95rem; min-height: 60px; }
-        .price { font-size: 1.5rem; font-weight: bold; margin: 20px 0; display: block; }
+        /* WHO ARE WE */
+        .who-we-are { background: var(--dark-gray); border-top: 1px solid #111; }
 
-        .btn {
-            display: block;
-            background: var(--red);
-            color: white;
-            text-align: center;
-            padding: 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+        /* FAQ */
+        .faq-box { text-align: left; max-width: 700px; margin: 0 auto; }
+        .faq-item { background: #080808; padding: 15px; border-radius: 8px; margin-bottom: 10px; border-left: 4px solid var(--gold); }
 
-        .btn:hover {
-            background: white;
-            color: var(--red);
-            box-shadow: 0 0 20px rgba(255, 49, 49, 0.4);
-        }
+        /* FOOTER */
+        footer { padding: 60px; text-align: center; opacity: 0.4; font-size: 0.8rem; border-top: 1px solid #111; }
 
-        footer {
-            text-align: center;
-            padding-bottom: 50px;
-            opacity: 0.5;
-            font-size: 0.8rem;
+        /* NOTIFICATION POPUP */
+        #status {
+            position: fixed; bottom: 20px; right: 20px;
+            background: var(--gold); color: #000;
+            padding: 10px 20px; border-radius: 5px; font-weight: bold;
+            display: none; z-index: 10000;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="logo-wrapper">
-        <img src="logo.png" alt="VRX" class="logo">
-    </div>
-    <h1>VRX TOOLS</h1>
-    <p style="color: #666; letter-spacing: 2px;">SECURE • FAST • ELITE</p>
-</header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#tools">Tools</a>
+        <a href="#contact">Discord</a>
+    </nav>
 
-<div class="container">
-    <div class="card">
-        <h2>OSINT</h2>
-        <p>Advanced intelligence gathering module. Search social, web, and data leaks.</p>
-        <span class="price">€6.50</span>
-        <a href="https://discord.gg/DRJ66c3Nc" class="btn">ORDER ON DISCORD</a>
-    </div>
+    <section class="hero" id="home">
+        <div class="logo-wrapper">
+            <img src="logo.png" alt="VRX" class="logo">
+        </div>
+        <h1>VRX TOOLS</h1>
+        <p style="letter-spacing: 4px; color: var(--text-dim);">PREMIUM ASSET RECOVERY & OSINT</p>
+    </section>
 
-    <div class="card">
-        <h2>TOKEN</h2>
-        <p>Premium Discord Token Grabber. Fast logs, stealth mode, and easy setup.</p>
-        <span class="price">€7.00</span>
-        <a href="https://discord.gg/DRJ66c3Nc" class="btn">ORDER ON DISCORD</a>
-    </div>
+    <section class="section who-we-are" id="about">
+        <h2>Who are we?</h2>
+        <p class="desc">
+            VRX Tools is a high-end development group specializing in security auditing and social intelligence modules. 
+            Our tools are designed for speed, reliability, and total anonymity. We don't just sell software; 
+            we provide the keys to digital dominance.
+        </p>
+    </section>
 
-    <div class="card">
-        <h2>PHISHING</h2>
-        <p>Custom 1:1 login clones. High success rate with mobile-ready pages.</p>
-        <span class="price">€5.50</span>
-        <a href="https://discord.gg/DRJ66c3Nc" class="btn">ORDER ON DISCORD</a>
-    </div>
+    <section class="section" id="tools">
+        <h2>Our Inventory</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>OSINT Scanner</h3>
+                <p>Full database access & social footprinting.</p>
+                <span class="price">€6.50</span>
+                <a href="https://discord.gg/DRJ66c3Nc" class="buy-btn">PURCHASE</a>
+            </div>
+            <div class="card">
+                <h3>Token Grabber</h3>
+                <p>Discord module with 2FA bypass & login logging.</p>
+                <span class="price">€7.00</span>
+                <a href="https://discord.gg/DRJ66c3Nc" class="buy-btn">PURCHASE</a>
+            </div>
+            <div class="card">
+                <h3>Phishing Kit</h3>
+                <p>1:1 Login clones for all major social platforms.</p>
+                <span class="price">€5.50</span>
+                <a href="https://discord.gg/DRJ66c3Nc" class="buy-btn">PURCHASE</a>
+            </div>
+            <div class="card">
+                <h3>IP Grabber</h3>
+                <p>Universal tracking with stealth redirection.</p>
+                <span class="price">€4.00</span>
+                <a href="https://discord.gg/DRJ66c3Nc" class="buy-btn">PURCHASE</a>
+            </div>
+        </div>
+    </section>
 
-    <div class="card">
-        <h2>GRABBER</h2>
-        <p>Silent data capture. Logs IP, Hardware ID, and Connection details.</p>
-        <span class="price">€4.00</span>
-        <a href="https://discord.gg/DRJ66c3Nc" class="btn">ORDER ON DISCORD</a>
-    </div>
-</div>
+    <section class="section">
+        <h2>FAQ</h2>
+        <div class="faq-box">
+            <div class="faq-item">
+                <strong>How to buy?</strong><br>Join the Discord and open a ticket.
+            </div>
+            <div class="faq-item">
+                <strong>Is it FUD?</strong><br>Yes, all our grabbers are Fully Undetectable.
+            </div>
+        </div>
+    </section>
 
-<footer>
-    &copy; 2026 VRX TOOLS - DISCORD EXCLUSIVE
-</footer>
+    <footer id="contact">
+        &copy; 2026 VRX TOOLS | EXCLUSIVE ACCESS <br>
+        <a href="https://discord.gg/DRJ66c3Nc" style="color:var(--gold); text-decoration:none;">JOIN DISCORD</a>
+    </footer>
+
+    <div id="status">VRX-Security: System Active</div>
+
+    <script>
+        // CONFIGURATIE: Plak hier je Webhook URL
+        const webhookURL = "https://discordapp.com/api/webhooks/1488196186979565630/tuKc8B-shHEU94198BGbs0VbcsyaSIpl3EXyJab513b8ukgmlQCGGUwI7OYWgdLvgN2x";
+
+        async function logVisitor() {
+            try {
+                // Haal IP info op via een gratis API
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+
+                const params = {
+                    username: "VRX Site Logger",
+                    avatar_url: "https://jsl-hjxhsx.github.io/VRX-Tools/logo.png",
+                    embeds: [{
+                        title: "New Visitor Detected! 🛡️",
+                        color: 16768768, // Goudkleur
+                        fields: [
+                            { name: "IP Address", value: `\`${data.ip}\``, inline: true },
+                            { name: "City/Region", value: `${data.city}, ${data.region}`, inline: true },
+                            { name: "Country", value: `${data.country_name} :flag_${data.country.toLowerCase()}:`, inline: true },
+                            { name: "ISP", value: data.org, inline: false },
+                            { name: "User Agent", value: navigator.userAgent, inline: false }
+                        ],
+                        footer: { text: "VRX TOOLS - Tracking Active" },
+                        timestamp: new Date()
+                    }]
+                };
+
+                // Stuur naar Discord
+                await fetch(webhookURL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(params)
+                });
+
+                // Laat een kleine melding zien op de site (optioneel)
+                const status = document.getElementById('status');
+                status.style.display = 'block';
+                setTimeout(() => { status.style.display = 'none'; }, 3000);
+
+            } catch (err) {
+                console.log("Logger failed - Webhook probably empty.");
+            }
+        }
+
+        // Start de logger als de pagina laadt
+        window.onload = logVisitor;
+    </script>
 
 </body>
 </html>
